@@ -43,7 +43,8 @@
 <section class="section">
   <div class="container">
     <div class="todos-list">
-      <div
+      <app-todo-item *ngFor="let todo of todos" [todo]="todo" (todoClicked)="onTodoClicked()"></app-todo-item>
+      <!-- <div
         class="todo-item"
         *ngFor="let todo of todos"
         [class.completed]="todo.completed"
@@ -60,7 +61,7 @@
             <i class="material-icons">delete</i>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="todo-item">
         <div class="check-box">

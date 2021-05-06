@@ -29,4 +29,7 @@ export class TodosComponent implements OnInit {
     this.showValidationErrors = false;
     form.reset();
   }
+  onTodoClicked() {
+    alert('clicked');
+  }
 }

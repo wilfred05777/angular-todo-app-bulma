@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import * as EventEmitter from 'node:events';
+import { DataService } from '../shared/data.service';
+import { Todo } from '../shared/todo.model';
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.scss']
+  styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent implements OnInit {
-
-  constructor() { }
+  // todo: Todo[];
+  @Input() todo: Todo;
+  // 2:16:57 in video
+  @Output() todoClicked: EventEmitter<void> = new EventEmitter();
+  constructor(private dataservice: DataService) {}
 
   ngOnInit(): void {
+    // this.todos = this.dataservice.getAllTodos();
   }
-
+  onTodoClicked() {
+    // console.log('Todo is clicked');
+    this.todoClicked.emit();
+  }
 }
