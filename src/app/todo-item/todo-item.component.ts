@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import * as EventEmitter from 'node:events';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Todo } from '../shared/todo.model';
 
