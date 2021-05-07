@@ -8,7 +8,8 @@ import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
 
-import { MatDialogModule } from '@anguar/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,13 @@ import { MatDialogModule } from '@anguar/material/dialog';
     TodoItemComponent,
     EditTodoDialogComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

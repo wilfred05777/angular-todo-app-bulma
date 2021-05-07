@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { DataService } from '../shared/data.service';
 import { Todo } from '../shared/todo.model';
 import { MatDialog } from '@angular/material/dialog';
+import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 
 @Component({
   selector: 'app-todos',
@@ -36,7 +37,7 @@ export class TodosComponent implements OnInit {
     todo.completed = !todo.completed;
   }
 
-  editTodo(tddo: Todo) {
+  editTodo(todo: Todo) {
     // 2:26:30 - install angular material
     // ng add @angular/material
     //  2:35:26
