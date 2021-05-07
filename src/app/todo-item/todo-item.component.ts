@@ -10,8 +10,9 @@ import { Todo } from '../shared/todo.model';
 export class TodoItemComponent implements OnInit {
   // todo: Todo[];
   @Input() todo: Todo;
-  // 2:16:57 in video
+  // 2:16:57 in video  - fixed
   @Output() todoClicked: EventEmitter<void> = new EventEmitter();
+  @Output() editClicked: EventEmitter<void> = new EventEmitter();
   constructor(private dataservice: DataService) {}
 
   ngOnInit(): void {
@@ -20,5 +21,8 @@ export class TodoItemComponent implements OnInit {
   onTodoClicked() {
     // console.log('Todo is clicked');
     this.todoClicked.emit();
+  }
+  onEditClicked() {
+    this.editClicked.emit();
   }
 }

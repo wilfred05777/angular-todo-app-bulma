@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../shared/data.service';
 import { Todo } from '../shared/todo.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-todos',
@@ -12,7 +13,7 @@ export class TodosComponent implements OnInit {
   todos: Todo[];
   showValidationErrors: boolean;
 
-  constructor(private dataservice: DataService) {}
+  constructor(private dataservice: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.todos = this.dataservice.getAllTodos();
@@ -29,8 +30,26 @@ export class TodosComponent implements OnInit {
     this.showValidationErrors = false;
     form.reset();
   }
+
   toggleCompleted(todo: Todo) {
     // alert('clicked');
     todo.completed = !todo.completed;
+  }
+
+  editTodo(tddo: Todo) {
+    // 2:35:26
+
+    //we need
+    // - index of todo
+    // user need to enter new updated information
+
+    const index = this.todos.indexOf(todo);
+
+    let dialogRef = this.dialog.open(EditTodoDialogComponent, {
+      // height: '400px',
+      width: '700px',
+    });
+
+    // this.dataservice.updateTodo();
   }
 }

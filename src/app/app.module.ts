@@ -6,10 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.component';
 
+import { MatDialogModule } from '@anguar/material/dialog';
 @NgModule({
-  declarations: [AppComponent, TodosComponent, TodoItemComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    TodosComponent,
+    TodoItemComponent,
+    EditTodoDialogComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })
