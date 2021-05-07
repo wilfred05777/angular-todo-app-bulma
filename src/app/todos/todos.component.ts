@@ -37,7 +37,9 @@ export class TodosComponent implements OnInit {
   }
 
   editTodo(tddo: Todo) {
-    // 2:35:26
+    // 2:26:30 - install angular material
+    // ng add @angular/material
+    //  2:35:26
 
     //we need
     // - index of todo
