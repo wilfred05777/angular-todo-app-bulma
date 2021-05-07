@@ -13,6 +13,8 @@ export class TodoItemComponent implements OnInit {
   // 2:16:57 in video  - fixed
   @Output() todoClicked: EventEmitter<void> = new EventEmitter();
   @Output() editClicked: EventEmitter<void> = new EventEmitter();
+  @Output() deleteClicked: EventEmitter<void> = new EventEmitter();
+
   constructor(private dataservice: DataService) {}
 
   ngOnInit(): void {
@@ -24,5 +26,8 @@ export class TodoItemComponent implements OnInit {
   }
   onEditClicked() {
     this.editClicked.emit();
+  }
+  onDeleteClicked() {
+    this.deleteClicked.emit();
   }
 }
